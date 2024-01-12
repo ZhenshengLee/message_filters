@@ -114,9 +114,9 @@ if(BUILD_TESTING)
     target_link_libraries(${PROJECT_NAME}-test_approximate_epsilon_time_policy ${PROJECT_NAME})
   endif()
 
-  ament_add_gtest(${PROJECT_NAME}-test_latest_policy test/test_latest_policy.cpp)
-  if(TARGET ${PROJECT_NAME}-test_latest_policy)
-    target_link_libraries(${PROJECT_NAME}-test_latest_policy ${PROJECT_NAME})
+  ament_add_gtest(${PROJECT_NAME}-test_manual_call_policy test/test_manual_call_policy.cpp)
+  if(TARGET ${PROJECT_NAME}-test_manual_call_policy)
+    target_link_libraries(${PROJECT_NAME}-test_manual_call_policy ${PROJECT_NAME} rclcpp::rclcpp)
   endif()
 
   ament_add_gtest(${PROJECT_NAME}-test_fuzz test/test_fuzz.cpp SKIP_TEST)
